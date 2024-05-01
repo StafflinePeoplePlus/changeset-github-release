@@ -2,7 +2,7 @@ import { unified } from 'unified';
 import remarkParse from 'remark-parse';
 import remarkStringify from 'remark-stringify';
 import { toString as mdastToString } from 'mdast-util-to-string';
-import { Brand, Data, Effect, Option } from 'effect';
+import { Data, Effect, Option } from 'effect';
 import { FileSystem } from '@effect/platform';
 import { Package } from './index.js';
 
@@ -16,12 +16,12 @@ const parseChangelog = (changelog: string) =>
 export const read = (path: string) =>
 	FileSystem.FileSystem.pipe(
 		Effect.flatMap((fs) => fs.readFileString(path)),
-		Effect.flatMap((changelog) => Effect.try(() => unified().use(remarkParse).parse(changelog))),
+		Effect.flatMap(parseChangelog),
 		Effect.map((ast) => new Changelog({ ast }))
 	);
 
 // Heavily modified from https://github.com/changesets/action/blob/c62ef9792fd0502c89479ed856efe28575010472/src/utils.ts#L37
-export function findEntry(changelog: Changelog, version: Package.Version) {
+export const findEntry = (changelog: Changelog, version: Package.Version) => {
 	let headingStartInfo = Option.none<{
 		index: number;
 		depth: number;
@@ -63,4 +63,4 @@ export function findEntry(changelog: Changelog, version: Package.Version) {
 					}),
 			})
 	);
-}
+};

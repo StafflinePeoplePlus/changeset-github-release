@@ -2,11 +2,11 @@ import { FileSystem } from '@effect/platform';
 import { Schema as S } from '@effect/schema';
 import { Brand, Effect } from 'effect';
 
-export type Version = string & Brand.Brand<'Version'>;
+export type Version = string & Brand.Brand<'Package.Version'>;
 export const Version = Brand.nominal<Version>();
 const versionSchema = S.String.pipe(S.fromBrand(Version));
 
-export class Info extends S.Class<Info>('PackageInfo')({
+export class Info extends S.Class<Info>('Package.Info')({
 	name: S.String,
 	version: versionSchema,
 }) {}

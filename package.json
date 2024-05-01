@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
-		"test": "tsx src/index.ts"
+		"dev": "tsx src/index.ts"
 	},
 	"keywords": [],
 	"author": "",
@@ -18,6 +18,8 @@
 		"@effect/platform": "^0.52.0",
 		"@effect/platform-node": "^0.48.1",
 		"@effect/schema": "^0.66.12",
+		"@octokit/core": "^6.1.2",
+		"@octokit/request-error": "^6.1.1",
 		"effect": "^3.1.0",
 		"mdast-util-to-string": "^4.0.0",
 		"remark-parse": "^11.0.0",
