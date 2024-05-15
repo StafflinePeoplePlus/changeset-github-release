@@ -1,0 +1,20 @@
+name: 'Changeset Github Release'
+description: 'Create a Github Release and tag from a changeset generated changelog entry, without publishing to npm.'
+inputs:
+  owner:
+    description: 'Owner of the repository if different from the one the action is running in.'
+    required: false
+  repo:
+    description: 'Name of the repository if different from the one the action is running in.'
+    required: false
+  package-json:
+    description: 'Path to the package.json file if not in the root of the repository.'
+    required: true
+    default: 'package.json'
+  changelog:
+    description: 'Path to the CHANGELOG.md file if not in the root of the repository.'
+    required: true
+    default: 'CHANGELOG.md'
+runs:
+  using: 'node20'
+  main: 'dist/index.js'

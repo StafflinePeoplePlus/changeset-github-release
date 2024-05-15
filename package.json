@@ -1,28 +1,33 @@
 {
 	"name": "@peopleplus/changeset-github-release",
-	"version": "1.0.0",
+	"version": "0.0.1",
 	"description": "",
 	"main": "index.js",
 	"type": "module",
 	"scripts": {
 		"dev": "tsx src/index.ts",
-		"build": "tsc"
+		"build": "tsc && ncc build lib/src/action.js -o dist --license licenses.txt",
+		"version": "changeset version && npm i && npm run build"
 	},
 	"keywords": [],
 	"author": "",
 	"license": "MIT",
 	"devDependencies": {
+		"@changesets/cli": "^2.27.1",
 		"@types/node": "^20.12.12",
 		"tsx": "^4.10.2",
 		"typescript": "^5.4.5"
 	},
 	"dependencies": {
+		"@actions/core": "^1.10.1",
+		"@actions/github": "^6.0.0",
 		"@effect/cli": "^0.36.25",
 		"@effect/platform": "^0.53.6",
 		"@effect/platform-node": "^0.49.6",
 		"@effect/schema": "^0.67.3",
 		"@octokit/core": "^6.1.2",
 		"@octokit/request-error": "^6.1.1",
+		"@vercel/ncc": "^0.38.1",
 		"effect": "^3.1.5",
 		"mdast-util-to-string": "^4.0.0",
 		"remark-parse": "^11.0.0",
