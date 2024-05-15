@@ -3,7 +3,7 @@ import remarkParse from 'remark-parse';
 import remarkStringify from 'remark-stringify';
 import { toString as mdastToString } from 'mdast-util-to-string';
 import { Data, Effect, Option } from 'effect';
-import { FileSystem } from '@effect/platform';
+import * as FileSystem from '@effect/platform/FileSystem';
 import { Package } from './index.js';
 
 export class Changelog extends Data.Class<{ ast: AST }> {}
