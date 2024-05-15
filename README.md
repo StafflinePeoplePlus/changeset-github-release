@@ -32,10 +32,10 @@ jobs:
 This repo uses this action to create its releases so feel free to peek at
 `.github/workflows/main.yml` for a full example in combo with the changesets action.
 
-### Option
+### Options
 
-By default the action will automatically pick up the repo name & owner, and the package.json and
-CHANGELOG.md files, but if theses are in non standard locations or for some reason you need to
+By default the action will automatically pick up the repo name & owner, and the `package.json` and
+`CHANGELOG.md` files, but if theses are in non standard locations or for some reason you need to
 change the repo the release happens on, then you can do so:
 
 ```yaml
