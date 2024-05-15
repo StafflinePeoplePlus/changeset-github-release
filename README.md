@@ -26,7 +26,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Create Release
-        uses: StafflinePeoplePlus/changeset-github-release@01.0.0
+        uses: StafflinePeoplePlus/changeset-github-release@v1.0.0
 ```
 
 This repo uses this action to create its releases so feel free to peek at
@@ -51,7 +51,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Create Release
-        uses: StafflinePeoplePlus/changeset-github-release@1.0.0
+        uses: StafflinePeoplePlus/changeset-github-release@v1.0.0
         with:
           owner: my-username
           repo: my-cool-repo
