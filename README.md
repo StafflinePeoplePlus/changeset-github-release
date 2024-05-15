@@ -38,7 +38,7 @@ By default the action will automatically pick up the repo name & owner, and the 
 CHANGELOG.md files, but if theses are in non standard locations or for some reason you need to
 change the repo the release happens on, then you can do so:
 
-```
+```yaml
 on:
   push:
     branches:
